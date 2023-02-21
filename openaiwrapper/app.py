@@ -29,3 +29,19 @@ def completions():
     messages = [choice.text.strip() for choice in result.choices]
 
     return {"response": result.choices, "messages": messages}
+
+
+@app.route("/api/image", methods=["POST"])
+def image():
+    """
+    Image creation endpoint.
+    """
+    params = request.json
+
+    result = openai.Image.create(**params)
+    if not params.get("prompt"):
+        return jsonify({"error": "Missing param 'prompt'"}), 400
+
+    urls = [item["url"] for item in result["data"]]
+
+    return {"response": result["data"], "urls": urls}
