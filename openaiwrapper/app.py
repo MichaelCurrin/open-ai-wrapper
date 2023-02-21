@@ -1,19 +1,23 @@
 """
 App module.
 
-Prompt is not a required field on OpenAI but it helps to make it required here to
-save a bad request.
+Prompt is not a required field on OpenAI but it helps to make it required here
+to save a bad request.
 """
+import os
+
 import openai
+from dotenv import load_dotenv
 from flask import Flask, jsonify, request
 from flask_restful import Api
 
+load_dotenv(".local.env", verbose=True)
+
+if not os.environ.get("OPENAI_API_KEY"):
+    raise ValueError("Must set `OPENAI_API_KEY` in environment variables")
+
 app = Flask(__name__)
 api = Api(app)
-
-
-if not openai.api_key:
-    raise ValueError("Must set `OPENAI_API_KEY` in environment variables")
 
 
 @app.route("/api/completions", methods=["POST"])
