@@ -9,6 +9,36 @@
 
 A basic Flask API that uses a configured secret key and passes on requests to the OpenAI API.
 
+
+## Installation
+
+```sh
+$ python3 -m venv venv
+$ source venv/bin/activate
+```
+
+```sh
+$ make all
+```
+
+## Configuration
+
+1. Signup for an account at https://openai.com
+1. Create your API key.
+1. Create `.local.env` in a local copy of this repo. e.g.
+    ```sh
+    OPENAI_API_KEY='sk-abcdef123'
+    ```
+1. Start the app.
+
+
+## Usage
+
+```sh
+$ make run
+```
+
+
 ## License
 
 Released under [MIT](/LICENSE) by [@MichaelCurrin](https://github.com/MichaelCurrin).
