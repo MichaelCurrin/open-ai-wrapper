@@ -7,7 +7,9 @@
 [![dependency - openai](https://img.shields.io/badge/dependency-openai-blue?logo=openai&logoColor=white)](https://pypi.org/project/openai)
 [![dependency - flask](https://img.shields.io/badge/dependency-flask-blue?logo=flask&logoColor=white)](https://pypi.org/project/flask)
 
-A basic Flask API that uses a configured secret key and passes on requests to the OpenAI API.
+If you want to build a web app that requests the OpenAI API but don't want to make requests in JS (exposing your credentials on requests), you can use a backend server instead. So requests go from frontend to backend to OpenAI and then passed back to show on the frontend.
+
+This implementation is in Python with a basic Flask API. You must sign up for OpenAI API and configure your secret value in your local config file in this repo.
 
 
 ## Installation
