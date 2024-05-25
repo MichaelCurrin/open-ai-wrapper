@@ -26,9 +26,10 @@ $ make all
 
 ## Configuration
 
-1. Signup for an account at https://openai.com
-1. Create your API key.
-1. Create `.local.env` in a local copy of this repo. e.g.
+1. Login to https://openai.com
+1. Go to Settings.
+1. Create your API key and copy it.
+1. Create `.local.env` in a local copy of this repo. Use content like:
     ```sh
     OPENAI_API_KEY='sk-abcdef123'
     ```
