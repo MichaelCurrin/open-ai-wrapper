@@ -1,8 +1,9 @@
 SHELL = /bin/bash
 APP_DIR = openaiwrapper
 
-
 default: install install-dev
+
+all: install install-dev fmt-check lint
 
 
 h help:
